@@ -5,19 +5,12 @@
 
 @theme {
   --color-primary: #030014;
-
   --color-light-100: #cecefb;
   --color-light-200: #a8b5db;
-
   --color-gray-100: #9ca4ab;
-
   --color-dark-100: #0f0d23;
-
   --font-dm-sans: DM Sans, sans-serif;
-
   --breakpoint-xs: 480px;
-
-  --background-image-hero-pattern: url("/hero-bg.png");
 }
 
 @layer base {
@@ -49,19 +42,31 @@
 }
 
 @layer components {
-  .pattern {
-    @apply bg-hero-pattern w-full h-full bg-center bg-cover absolute -z-1;
-  }
-
   .wrapper {
     @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
   }
 
+  .search {
+    @apply w-full bg-light-100/10 px-4 py-3 rounded-lg mt-10 mx-auto max-w-lg flex;
+
+    & div {
+      @apply relative flex items-center;
+    }
+
+    & img {
+      @apply relative left-6 h-9 w-5;
+    }
+
+    & input {
+      @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-gray-200 placeholder-light-200 outline-hidden;
+    }
+  }
+
   .trending {
-    @apply mt-20;
+    @apply mt-20 w-full;
 
     & ul {
-      @apply flex flex-row overflow-y-auto gap-5 -mt-10 w-full hide-scrollbar;
+      @apply w-full flex flex-row overflow-y-auto gap-5 -mt-10 w-full hide-scrollbar;
     }
 
     & ul li {
@@ -73,28 +78,12 @@
     }
 
     & ul li img {
-      @apply w-[127px] h-[163px] rounded-lg object-cover -ml-3.5;
-    }
-  }
-
-  .search {
-    @apply w-full bg-light-100/5 px-4 py-3 rounded-lg mt-10 mx-auto;
-
-    & div {
-      @apply relative flex items-center;
-    }
-
-    & img {
-      @apply absolute left-6 h-9 w-5;
-    }
-
-    & input {
-      @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-gray-200 placeholder-light-200 outline-hidden;
+      @apply w-[127px] h-[180px] rounded-lg object-cover -ml-3.5 transition-transform duration-300 hover:scale-110;
     }
   }
 
   .all-movies {
-    @apply space-y-9 mx-0 md:mx-2 xs:mx-2 px-4;
+    @apply space-y-9 mx-0 md:mx-2 xs:mx-2;
 
     & h2 {
       @apply flex items-center justify-between;
@@ -112,15 +101,11 @@
       @apply bg-dark-100 rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105;
 
       & img {
-        @apply w-full h-[280px] object-cover rounded-t-xl transition-transform duration-300;
-      }
-
-      & .content {
-        @apply py-4 px-2;
+        @apply w-full h-auto object-cover rounded-xl transition-transform duration-300;
       }
 
       & h3 {
-        @apply text-lg font-semibold line-clamp-1 pl-2 text-white;
+        @apply text-lg font-semibold line-clamp-1 text-white;
       }
 
       & .meta {
