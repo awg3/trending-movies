@@ -29,7 +29,11 @@
   }
 
   main {
-    @apply min-h-screen relative bg-primary mx-2 max-w-7xl mx-auto rounded-3xl overflow-hidden;
+    @apply w-full min-h-screen relative bg-primary;
+    background-image: url('/src/assets/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   header {
