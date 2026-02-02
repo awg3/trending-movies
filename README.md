@@ -2,6 +2,8 @@
 
 A React application that lets you search for movies and tracks the most popular searches using the TMDB API and Appwrite backend.
 
+![Trending Movies](./public/preview.png)
+
 ## Features
 
 - **Search Movies** - Find movies by title
